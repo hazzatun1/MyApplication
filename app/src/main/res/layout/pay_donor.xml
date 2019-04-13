@@ -19,15 +19,13 @@
 
 
     <EditText
-        android:id="@+id/bloodGroup"
+        android:id="@+id/ifPaid"
         android:layout_width="206dp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="#ffffff"
-        android:hint="How much u want?"
+        android:hint="Are u Paid? Yes / No"
         android:paddingLeft="2dp" />
-
-
 
 
     <Button
@@ -36,38 +34,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#04ea00"
-        android:text="Demand"
+        android:text="Closed"
         android:textColor="#ffffff" />
-    <TextView
-        android:layout_marginTop="10sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="OR"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:textColor="@color/colorAccent"/>
-    <Button
-        android:id="@+id/free"
-        android:layout_width="206dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#04ea00"
-        android:text="Free Donate"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_marginTop="10sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contacted Blood Seeker"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/red"/>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
-
 
 </LinearLayout>

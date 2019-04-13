@@ -6,5 +6,7 @@
     <color name="color_preloader_start">#fdb6b6</color>
     <color name="color_preloader_center">#fdb6b6</color>
     <color name="color_preloader_end">#ffffff</color>
+    <color name="red">#FF0000</color>
+
 
 </resources>

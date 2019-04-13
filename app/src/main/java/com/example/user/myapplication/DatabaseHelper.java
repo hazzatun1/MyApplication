@@ -24,6 +24,13 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         public static final String COL_d5 ="bloodGroup";
     public static final String COL_d6 ="address";
 
+    public static final String TABLE_blood ="blood_management";
+    public static final String COL_dd1 ="ID";
+    public static final String COL_dd2 ="value_per_bag";
+    public static final String COL_dd3 ="ifPaid";
+    public static final String COL_dd4 ="seeker_time_range";
+
+
         public DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, 2);
         }
@@ -34,6 +41,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                     "(ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, mobile TEXT, bloodGroup TEXT, address TEXT)");
             sqLiteDatabase.execSQL("CREATE TABLE registerdonor " +
                     "(ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, mobile TEXT, bloodGroup TEXT, address TEXT)");
+            sqLiteDatabase.execSQL("CREATE TABLE blood_management " +
+                    "(ID INTEGER PRIMARY  KEY AUTOINCREMENT, value_per_bag TEXT, ifPaid TEXT, seeker_time_range TEXT)");
         }
 
         @Override
@@ -65,6 +74,25 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         contentValues.put("bloodGroup",contact);
         contentValues.put("address",address);
         long res = db.insert("registerdonor",null,contentValues);
+        db.close();
+        return  res;
+    }
+
+    public long addBlood(String vpb){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("value_per_bag",vpb);
+
+        long res = db.insert("blood_management",null,contentValues);
+        db.close();
+        return  res;
+    }
+    public long addBlood2(String ip, String str){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("ifPaid",ip);
+        contentValues.put("seeker_time_range", str);
+        long res = db.insert("blood_management",null,contentValues);
         db.close();
         return  res;
     }

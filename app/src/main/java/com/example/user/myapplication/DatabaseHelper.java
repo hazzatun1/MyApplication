@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseHelper extends SQLiteOpenHelper{
         public static final String DATABASE_NAME ="register.db";
         public static final String TABLE_NAME ="registeruser";
@@ -131,6 +134,36 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             else
                 return  false;
         }
+
+
+
+
+    public List<Contact> getAllContacts() {
+        List<Contact> contactList = new ArrayList<Contact>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_NAME;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Contact contact = new Contact();
+                contact.setID(Integer.parseInt(cursor.getString(0)));
+                contact.setAddress(cursor.getString(1));
+                contact.setUserName(cursor.getString(2));
+                contact.setBloodGroup(cursor.getString(3));
+
+                // Adding contact to list
+                contactList.add(contact);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return contactList;
+    }
+
 
 
 

@@ -32,7 +32,7 @@ public class DonorHome extends AppCompatActivity {
         amount=(EditText) findViewById(R.id.amount);
         demand=(Button) findViewById(R.id.demand);
         free=(Button) findViewById(R.id.free);
-        ShowRecords();
+       // ShowRecords(); etar jonno login page ei break hocche. how can i show the user list to this page???
     }
     private void ShowRecords(){
         final ArrayList<Contact> contacts = new ArrayList<>(db.getAllContacts());

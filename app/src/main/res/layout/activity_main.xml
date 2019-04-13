@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:text="Blood Bank!"
         android:textSize="50sp"
         android:layout_gravity="center"
+        android:textColor="@color/colorAccent"
         />
     <Button
         android:id="@+id/btnDonor"
@@ -21,6 +23,7 @@
         android:text="Donor"
         android:textSize="30sp"
         android:onClick="donorPlay"
+        android:background="@color/colorAccent"
         />
 
     <Button
@@ -29,6 +32,7 @@
         android:layout_height="200sp"
         android:text="Blood Seeker"
         android:textSize="30sp"
-        android:onClick="userPlay"/>
+        android:onClick="userPlay"
+        android:background="@color/colorPrimaryDark"/>
 
 </LinearLayout>

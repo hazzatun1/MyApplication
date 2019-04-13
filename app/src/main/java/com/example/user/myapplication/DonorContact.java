@@ -3,32 +3,32 @@ package com.example.user.myapplication;
 public class DonorContact {
 
 
-    public class Contact {
-
         //private variables
         int _id;
         String _bloodGroup;
-        String _contact;
+        String _demand;
         String _address;
+        String _mobile;
 
 
         // Empty constructor
-        public Contact(){
+        public DonorContact(){
 
         }
-        public Contact(int id, String bloodGroup,String contact,String address){
+        public DonorContact(int id, String bloodGroup,String demand,String address, String mobile){
             this._id=id;
             this._bloodGroup = bloodGroup;
-            this._contact = contact;
+            this._demand = demand;
             this._address = address;
+            this._mobile = mobile;
         }
 
         // constructor
-        public Contact(String bloodGroup,String contact,String address){
-
+        public DonorContact(String bloodGroup,String demand,String address, String mobile){
             this._bloodGroup = bloodGroup;
-            this._contact = contact;
+            this._demand = demand;
             this._address = address;
+            this._mobile = mobile;
         }
 
         // getting ID
@@ -42,23 +42,23 @@ public class DonorContact {
         }
 
         // getting first name
-        public String getUserName(){
+        public String getAdd(){
             return this._address;
         }
 
         // setting first name
-        public void setUserName(String address){
+        public void setAdd(String address){
             this._address = address;
         }
 
         // getting second name
-        public String getAddress(){
-            return this._contact;
+        public String getdem(){
+            return this._demand;
         }
 
         // setting first name
-        public void setAddress(String contact){
-            this._contact = contact;
+        public void setDem(String demand){
+            this._demand = demand;
         }
 
         // getting phone number
@@ -71,8 +71,16 @@ public class DonorContact {
             this._bloodGroup = bloodGroup;
         }
 
+        public String getMob(){
+            return this._mobile;
+        }
+
+        // setting phone number
+        public void setMob(String mobile){
+            this._mobile = mobile;
+        }
     }
 
 
 
-}
+

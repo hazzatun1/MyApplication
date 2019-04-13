@@ -164,7 +164,32 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return contactList;
     }
 
+    public List<DonorContact> getAllDonor() {
+        List<DonorContact> contactList = new ArrayList<DonorContact>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_donor;
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                DonorContact contact = new DonorContact();
+                contact.setID(Integer.parseInt(cursor.getString(0)));
+                contact.setAdd(cursor.getString(1));
+                contact.setDem(cursor.getString(2));
+                contact.setBloodGroup(cursor.getString(3));
+                contact.setMob(cursor.getString(4));
+
+                // Adding contact to list
+                contactList.add(contact);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return contactList;
+    }
 
 
 

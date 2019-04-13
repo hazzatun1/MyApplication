@@ -13,6 +13,12 @@ public class Contact {
         public Contact(){
 
         }
+    public Contact(int id, String bloodGroup,String contact,String address){
+this._id=id;
+        this._bloodGroup = bloodGroup;
+        this._contact = contact;
+        this._address = address;
+    }
 
         // constructor
         public Contact(String bloodGroup,String contact,String address){

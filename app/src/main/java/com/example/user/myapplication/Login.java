@@ -14,6 +14,7 @@ public class Login extends AppCompatActivity {
     EditText mTextUsername;
     EditText mTextPassword;
     Button mButtonLogin;
+
     TextView mTextViewRegister;
     DatabaseHelper db;
     ViewGroup progressView;
@@ -29,6 +30,7 @@ public class Login extends AppCompatActivity {
         mTextUsername = (EditText)findViewById(R.id.edittext_username);
         mTextPassword = (EditText)findViewById(R.id.edittext_password);
         mButtonLogin = (Button)findViewById(R.id.button_login);
+
         mTextViewRegister = (TextView)findViewById(R.id.textview_register);
         mTextViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +45,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
-                Boolean res = db.checkUser(user, pwd);
+
+                Boolean res = db.checkUser(user,pwd);
                 if(res == true)
                 {
                     Intent HomePage = new Intent(Login.this,Home.class);

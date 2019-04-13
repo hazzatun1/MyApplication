@@ -14,6 +14,9 @@ public class DonorReg extends AppCompatActivity {
     EditText mTextUsername;
     EditText mTextPassword;
     EditText mTextCnfPassword;
+    EditText bloodGroup;
+    EditText contact;
+    EditText address;
     Button mButtonRegister;
     TextView mTextViewLogin;
 
@@ -26,6 +29,9 @@ public class DonorReg extends AppCompatActivity {
         mTextUsername = (EditText)findViewById(R.id.edittext_username);
         mTextPassword = (EditText)findViewById(R.id.edittext_password);
         mTextCnfPassword = (EditText)findViewById(R.id.edittext_cnf_password);
+        bloodGroup = (EditText)findViewById(R.id.bloodGroup);
+        contact = (EditText)findViewById(R.id.Contact);
+        address = (EditText)findViewById(R.id.Address);
         mButtonRegister = (Button)findViewById(R.id.button_register);
         mTextViewLogin = (TextView)findViewById(R.id.textview_login);
         mTextViewLogin.setOnClickListener(new View.OnClickListener() {
@@ -42,9 +48,11 @@ public class DonorReg extends AppCompatActivity {
                 String user = mTextUsername.getText().toString().trim();//trim extra space kete day.
                 String pwd = mTextPassword.getText().toString().trim();
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
-
+                String bg = bloodGroup.getText().toString().trim();//trim extra space kete day.
+                String ct = contact.getText().toString().trim();
+                String ad = address.getText().toString().trim();
                 if(pwd.equals(cnf_pwd)){
-                    long val = db.addDonor(user,pwd);
+                    long val = db.addDonor(user, pwd, bg, ct, ad);
                     if(val > 0){
                         Toast.makeText(DonorReg.this,"You have registered",Toast.LENGTH_SHORT).show();
                         Intent moveToLogin = new Intent(DonorReg.this,DonorLogin.class);
